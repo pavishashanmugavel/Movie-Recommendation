@@ -1,0 +1,347 @@
+═══════════════════════════════════════════════════════════════════
+  NOTFLIX - SYSTEM TESTING GUIDE
+  How to Verify Recommendation & Notification Systems
+═══════════════════════════════════════════════════════════════════
+
+📋 OVERVIEW
+───────────────────────────────────────────────────────────────────
+This guide explains how to verify that both the recommendation engine
+and notification system are working properly in your Notflix application.
+
+═══════════════════════════════════════════════════════════════════
+  PART 1: USING THE SYSTEM TESTER TOOL
+═══════════════════════════════════════════════════════════════════
+
+🎯 STEP 1: Open the Application
+───────────────────────────────────────────────────────────────────
+1. Start your application
+2. Navigate to the Home page
+3. Look for the "🧪 Test Systems" button in the bottom-right corner
+
+🎯 STEP 2: Run Automated Tests
+───────────────────────────────────────────────────────────────────
+1. Click the "🧪 Test Systems" button
+2. Click "🚀 Run All Tests" button
+3. Watch the test results appear in real-time
+4. Check the status: ✅ Pass, ❌ Fail, ℹ️ Info
+
+The tester will check:
+  ✓ Notification system functionality
+  ✓ Viewing history data
+  ✓ Recommendation engine data
+  ✓ My List functionality
+  ✓ Credits data availability
+  ✓ Genre data availability
+
+🎯 STEP 3: Add Test Movie (Optional)
+───────────────────────────────────────────────────────────────────
+1. Click "🎥 Add Test Movie" button
+2. This adds a mock movie to your viewing history
+3. Run tests again to see the difference
+
+═══════════════════════════════════════════════════════════════════
+  PART 2: CONSOLE LOGGING VERIFICATION
+═══════════════════════════════════════════════════════════════════
+
+🎯 STEP 1: Open Browser Console
+───────────────────────────────────────────────────────────────────
+Press F12 or:
+  - Chrome/Edge: Ctrl + Shift + J (Windows) or Cmd + Option + J (Mac)
+  - Firefox: Ctrl + Shift + K (Windows) or Cmd + Option + K (Mac)
+
+🎯 STEP 2: Watch for Emoji Logs
+───────────────────────────────────────────────────────────────────
+Look for these emoji indicators in the console:
+
+RECOMMENDATION ENGINE:
+  🎬 RECOMMENDATION ENGINE STARTING...
+  📊 Viewing History: X items
+  🎭 Seed Genres: [genre IDs]
+  👥 Seed People: [person IDs]
+  🎯 Getting similar to: [Movie Name]
+  ✅ Loaded X similar movies
+  👨‍🎬 Fetching recommendations based on actors/directors...
+  ✅ Loaded X movies based on people
+  🎭 Fetching recommendations based on genres...
+  ✅ Loaded X genre-based movies
+  ⭐ No history found, loading popular movies...
+  🏁 RECOMMENDATION ENGINE COMPLETE
+
+FILTERING SYSTEM:
+  🔍 Applying filters: {category, genreId, personId, companyId}
+  🔄 No filters, showing base results
+  ✅ Discovered X movies
+  🎯 Matched X personalized results
+  🔍 Showing all discovered results (no overlap)
+  🎬 Showing X discovered results
+  ❌ Filter error: [error message]
+
+NOTIFICATIONS:
+  ✅ NOTIFICATION [SUCCESS]: [message]
+  ❌ NOTIFICATION [ERROR]: [message]
+  ⚠️ NOTIFICATION [WARNING]: [message]
+  ℹ️ NOTIFICATION [INFO]: [message]
+
+═══════════════════════════════════════════════════════════════════
+  PART 3: MANUAL TESTING - RECOMMENDATION SYSTEM
+═══════════════════════════════════════════════════════════════════
+
+🎯 TEST 1: Initial Load (No History)
+───────────────────────────────────────────────────────────────────
+Expected Behavior:
+  1. Go to Home page
+  2. Scroll to "Recommended For You" section
+  3. Should show: Popular movies (no personalization yet)
+  4. Console log: "⭐ No history found, loading popular movies..."
+
+🎯 TEST 2: After Watching Movies
+───────────────────────────────────────────────────────────────────
+Steps:
+  1. Click on any movie card
+  2. Wait for player page to load
+  3. Go back to Home
+  4. Scroll to "Recommended For You"
+  
+Expected Behavior:
+  - Should show movies SIMILAR to what you just watched
+  - Console log: "🎯 Getting similar to: [Movie Name]"
+  - Console log: "✅ Loaded X similar movies"
+  - Notification: "Showing X movies similar to what you recently watched"
+
+🎯 TEST 3: Genre-Based Filtering
+───────────────────────────────────────────────────────────────────
+Steps:
+  1. Watch 2-3 movies from same genre (e.g., Action)
+  2. Go to Home page
+  3. Scroll to "Recommended For You"
+  4. Change "Filter Category" to "Genre"
+  5. Select a genre from dropdown
+
+Expected Behavior:
+  - Dropdown should contain genres from movies you watched
+  - Movies should update based on selected genre
+  - Console log: "🔍 Applying filters: {filterCategory: 'genre', ...}"
+  - Console log: "✅ Discovered X movies"
+  - Notification shows count of movies found
+
+🎯 TEST 4: Actor/Director Filtering
+───────────────────────────────────────────────────────────────────
+Steps:
+  1. Watch movies with known actors (Tom Hanks, etc.)
+  2. Go to "Recommended For You"
+  3. Change filter to "Actor / Director"
+  4. You should see actor names you've watched
+
+Expected Behavior:
+  - Shows actors/directors from your viewing history
+  - Can search for other actors
+  - Clicking actor chip filters movies
+  - Console log: "👨‍🎬 Fetching recommendations based on actors/directors..."
+
+🎯 TEST 5: Production Company Filtering
+───────────────────────────────────────────────────────────────────
+Steps:
+  1. Watch movies (they'll have production companies)
+  2. Go to "Recommended For You"
+  3. Change filter to "Production Company"
+  4. Should see companies like "Marvel Studios", "Warner Bros.", etc.
+
+Expected Behavior:
+  - Shows production companies from your history
+  - Can search for other companies
+  - Clicking company chip filters movies
+
+═══════════════════════════════════════════════════════════════════
+  PART 4: MANUAL TESTING - NOTIFICATION SYSTEM
+═══════════════════════════════════════════════════════════════════
+
+🎯 TEST 1: Basic Notifications
+───────────────────────────────────────────────────────────────────
+Actions that trigger notifications:
+
+  ✓ Adding to My List
+    - Click the "+" button on any movie
+    - Expect: ✅ "Added [Movie] to My List"
+  
+  ✓ Removing from My List
+    - Click the "✓" button on a movie in your list
+    - Expect: ℹ️ "Removed [Movie] from My List"
+  
+  ✓ Switching pages
+    - Click navbar items (Home, Movies, TV Shows, etc.)
+    - Expect: ℹ️ "Switched to [page]"
+  
+  ✓ Search
+    - Type in search box and submit
+    - Expect: Shows results or "No results found"
+
+🎯 TEST 2: Recommendation Notifications
+───────────────────────────────────────────────────────────────────
+  ✓ Initial load (no history)
+    - Expect: ℹ️ "Showing popular movies"
+  
+  ✓ Initial load (with history)
+    - Expect: ✅ "Showing X movies similar to what you recently watched"
+    - OR: ✅ "Found X movies based on actors/directors you've watched"
+  
+  ✓ Filtering by genre
+    - Expect: ✅ "Found X personalized movies matching your filter"
+  
+  ✓ Filtering by person
+    - Expect: ✅ "Found X movies for selected person"
+  
+  ✓ No results found
+    - Expect: ⚠️ "No movies found with selected filters"
+
+🎯 TEST 3: Visual Notification Display
+───────────────────────────────────────────────────────────────────
+Check these visual elements:
+  
+  ✓ Notifications appear in TOP-RIGHT corner
+  ✓ Notifications auto-dismiss after 5 seconds
+  ✓ Bell icon shows notification count
+  ✓ Clicking bell opens notification dropdown
+  ✓ Dropdown shows last 5 notifications
+
+═══════════════════════════════════════════════════════════════════
+  PART 5: VERIFICATION CHECKLIST
+═══════════════════════════════════════════════════════════════════
+
+📊 RECOMMENDATION ENGINE CHECKLIST
+───────────────────────────────────────────────────────────────────
+□ Shows popular movies when no viewing history
+□ Shows similar movies after watching one
+□ Extracts genres from viewing history
+□ Extracts actors from viewing history
+□ Extracts directors from viewing history
+□ Extracts production companies from history
+□ Genre filter dropdown populated from history
+□ Actor/Director search shows people from history
+□ Company search shows companies from history
+□ Filter by genre works correctly
+□ Filter by actor/director works correctly
+□ Filter by company works correctly
+□ Reset button clears all filters
+□ Console logs show recommendation process
+□ No errors in console
+
+📢 NOTIFICATION SYSTEM CHECKLIST
+───────────────────────────────────────────────────────────────────
+□ Notifications appear in top-right corner
+□ Success notifications (green ✅)
+□ Error notifications (red ❌)
+□ Warning notifications (yellow ⚠️)
+□ Info notifications (blue ℹ️)
+□ Notifications auto-dismiss after 5 seconds
+□ Bell icon shows notification count
+□ Bell dropdown shows recent notifications
+□ Console logs show notification messages with emojis
+□ No errors in console
+
+═══════════════════════════════════════════════════════════════════
+  PART 6: COMMON ISSUES & SOLUTIONS
+═══════════════════════════════════════════════════════════════════
+
+❌ ISSUE: No recommendations showing
+───────────────────────────────────────────────────────────────────
+SOLUTION:
+  1. Check console for errors
+  2. Verify TMDB API key is configured
+  3. Watch 2-3 movies first
+  4. Refresh the page
+
+❌ ISSUE: Filters not working
+───────────────────────────────────────────────────────────────────
+SOLUTION:
+  1. Make sure you have viewing history
+  2. Check console logs when filtering
+  3. Try "Reset" button and filter again
+  4. Verify network requests in DevTools
+
+❌ ISSUE: Notifications not appearing
+───────────────────────────────────────────────────────────────────
+SOLUTION:
+  1. Check console for notification logs
+  2. Look in top-right corner (they might be auto-dismissed)
+  3. Click bell icon to see notification history
+  4. Check browser console for errors
+
+❌ ISSUE: No actors/directors in filter
+───────────────────────────────────────────────────────────────────
+SOLUTION:
+  1. Watch movies from the Player page (not just preview)
+  2. Wait for full movie details to load
+  3. Check console log: should show "credits" data
+  4. System Tester should show "X items have credits"
+
+═══════════════════════════════════════════════════════════════════
+  PART 7: ADVANCED DEBUGGING
+═══════════════════════════════════════════════════════════════════
+
+🔍 VIEW STORED DATA
+───────────────────────────────────────────────────────────────────
+Open browser console and type:
+
+  // View viewing history
+  localStorage.getItem('viewingHistory')
+  
+  // View My List
+  localStorage.getItem('myList')
+  
+  // View user profile
+  localStorage.getItem('userProfile')
+
+🔍 CLEAR ALL DATA
+───────────────────────────────────────────────────────────────────
+To start fresh:
+
+  localStorage.clear()
+  
+Then refresh the page.
+
+🔍 NETWORK REQUESTS
+───────────────────────────────────────────────────────────────────
+1. Open DevTools (F12)
+2. Go to "Network" tab
+3. Filter by "Fetch/XHR"
+4. Watch for API calls to TMDB
+5. Click on requests to see response data
+
+═══════════════════════════════════════════════════════════════════
+  PART 8: EXPECTED CONSOLE OUTPUT EXAMPLE
+═══════════════════════════════════════════════════════════════════
+
+When everything is working, you should see logs like this:
+
+  🎬 RECOMMENDATION ENGINE STARTING...
+  📊 Viewing History: 5 items
+  🎭 Seed Genres: [28, 12, 878]
+  👥 Seed People: [1, 2, 3, 4, 5]
+  🎯 Getting similar to: Inception
+  ✅ Loaded 20 similar movies
+  ✅ NOTIFICATION [SUCCESS]: Showing 20 movies similar to what you recently watched
+  🏁 RECOMMENDATION ENGINE COMPLETE
+
+  🔍 Applying filters: {filterCategory: 'genre', selectedGenreId: '28'}
+  ✅ Discovered 40 movies
+  🎯 Matched 15 personalized results
+  ✅ NOTIFICATION [SUCCESS]: Found 15 personalized movies matching your filter
+
+═══════════════════════════════════════════════════════════════════
+  NEED HELP?
+═══════════════════════════════════════════════════════════════════
+
+If you're still having issues:
+
+1. Check all items in the VERIFICATION CHECKLIST
+2. Review console logs for errors
+3. Use the System Tester tool
+4. Clear localStorage and try again
+5. Verify TMDB API is working
+
+Remember: The system needs viewing history to work properly!
+Watch at least 3-5 movies to get the best results.
+
+═══════════════════════════════════════════════════════════════════
+  END OF TESTING GUIDE
+═══════════════════════════════════════════════════════════════════

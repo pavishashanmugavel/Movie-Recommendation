@@ -1,0 +1,257 @@
+.navbar{
+    width: 100%;
+    padding: 20px 6%;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    font-size: 14px;
+    color: #e5e5e5;
+    background-image: linear-gradient(180deg, rgba(0,0,0,0.7) 10%, transparent);
+    z-index: 1;
+
+}
+
+.navbar-left{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.navbar-left img{
+    width: 90px;
+}
+
+.navbar-left ul{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.navbar-left ul li{
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.navbar-left ul li:hover,
+.navbar-left ul li.active {
+    color: #ffffff;
+}
+
+.navbar-left ul li.active {
+    font-weight: 600;
+}
+
+.navbar-right{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.navbar-right .icons{
+    width: 20px;
+    cursor: pointer;
+}
+
+.search-container,
+.notifications-container {
+    position: relative;
+}
+
+.navbar-right .profile{
+    border-radius: 4px;
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #e50914 0%, #b20710 100%);
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-profile{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.navbar .dropdown{
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    background: #191919;
+    padding: 15px 0;
+    border-radius: 4px;
+    z-index: 10;
+    margin-top: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.profile-dropdown-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    margin-bottom: 5px;
+}
+
+.dropdown-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #e50914 0%, #b20710 100%);
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.profile-name {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.dropdown-divider {
+    height: 1px;
+    background: #333;
+    margin: 8px 0;
+}
+
+.search-dropdown,
+.notifications-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 300px;
+    background: #191919;
+    padding: 20px;
+    border-radius: 4px;
+    z-index: 10;
+    margin-top: 10px;
+}
+
+.search-dropdown form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.search-dropdown input {
+    flex: 1;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    background: #333;
+    color: white;
+    font-size: 14px;
+}
+
+.search-dropdown button {
+    padding: 8px 16px;
+    background: #e50914;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.search-dropdown button:hover {
+    background: #f40612;
+}
+
+.search-loading {
+    text-align: center;
+    color: #999;
+    padding: 10px;
+}
+
+.search-results {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.search-result-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+    cursor: pointer;
+}
+
+.search-result-item:hover {
+    background: #333;
+}
+
+.search-result-item img {
+    width: 40px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.search-result-item span {
+    color: white;
+    font-size: 14px;
+}
+
+.notifications-dropdown h3 {
+    margin: 0 0 15px 0;
+    color: white;
+    font-size: 16px;
+}
+
+.notification-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+}
+
+.notification-item span {
+    display: block;
+    color: white;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.notification-item small {
+    color: #999;
+    font-size: 12px;
+}
+
+.navbar .dropdown p{
+    font-size: 13px;
+    cursor: pointer;
+    padding: 8px 20px;
+    margin: 0;
+    transition: background 0.2s;
+}
+
+.navbar .dropdown p:hover {
+    background: #333;
+}
+
+.navbar-profile:hover .dropdown{
+    display: block;
+}
+
+.nav-dark{
+    background: #141414;
+}

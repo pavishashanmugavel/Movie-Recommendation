@@ -1,0 +1,133 @@
+.user-switcher {
+  background: rgba(20, 20, 20, 0.95);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: white;
+}
+
+.user-switcher h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #e50914;
+}
+
+.demo-accounts h4 {
+  margin: 0 0 15px 0;
+  color: #b3b3b3;
+}
+
+.account-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.demo-btn, .logout-btn {
+  background: #e50914;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.demo-btn:hover, .logout-btn:hover {
+  background: #f40612;
+  transform: translateY(-2px);
+}
+
+.logout-btn {
+  background: #333;
+}
+
+.logout-btn:hover {
+  background: #444;
+}
+
+.manual-auth {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+}
+
+.auth-toggle {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.auth-toggle button {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.auth-toggle button.active {
+  background: #e50914;
+  border-color: #e50914;
+}
+
+.auth-toggle button:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.auth-form input {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  color: #fff;
+  padding: 10px 12px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: #e50914;
+}
+
+.auth-form button {
+  background: #e50914;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.auth-form button:hover {
+  background: #f40612;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .user-switcher {
+    padding: 15px;
+  }
+  
+  .account-buttons {
+    flex-direction: column;
+  }
+  
+  .demo-btn, .logout-btn {
+    width: 100%;
+  }
+}

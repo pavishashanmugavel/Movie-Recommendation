@@ -1,0 +1,108 @@
+.privacy-page {
+  min-height: 100vh;
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  margin-bottom: 30px;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #333;
+}
+
+.back-button img {
+  width: 20px;
+  height: 20px;
+}
+
+.back-button span {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.content-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.content-container h1 {
+  font-size: 3rem;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #e50914;
+}
+
+.content-section {
+  margin-bottom: 50px;
+  padding: 30px;
+  background-color: #111;
+  border-radius: 10px;
+  border-left: 4px solid #e50914;
+}
+
+.content-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #e50914;
+}
+
+.content-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.content-section p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #ccc;
+}
+
+.privacy-item, .usage-details, .sharing-info, .security-measures, .rights-info, .cookie-info, .transfer-info, .update-info {
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.privacy-item ul, .usage-details ul, .sharing-info ul, .security-measures ul, .rights-info ul, .cookie-info ul {
+  margin-top: 15px;
+  padding-left: 20px;
+}
+
+.privacy-item li, .usage-details li, .sharing-info li, .security-measures li, .rights-info li, .cookie-info li {
+  margin-bottom: 8px;
+  color: #ccc;
+}
+
+.contact-info {
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .content-container h1 {
+    font-size: 2rem;
+  }
+  
+  .content-section {
+    padding: 20px;
+  }
+}

@@ -1,0 +1,263 @@
+.media-centre-page {
+  min-height: 100vh;
+  background: #000;
+  color: #fff;
+  font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 4% 60px;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 60px;
+  padding: 40px 0;
+}
+
+.page-header h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+  color: #e50914;
+}
+
+.page-header .subtitle {
+  font-size: 1.25rem;
+  color: #b3b3b3;
+  font-weight: 400;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.media-section {
+  margin-bottom: 80px;
+}
+
+.media-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #e5e5e5;
+  letter-spacing: -0.02em;
+}
+
+/* Press Releases */
+.press-releases {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.press-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 28px;
+  transition: all 0.3s ease;
+}
+
+.press-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(229, 9, 20, 0.5);
+  transform: translateY(-2px);
+}
+
+.press-date {
+  color: #e50914;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.press-item h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #fff;
+  line-height: 1.3;
+}
+
+.press-item p {
+  color: #b3b3b3;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.read-more {
+  color: #e50914;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.read-more:hover {
+  color: #f40612;
+}
+
+/* Media Assets Grid */
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.asset-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 32px 24px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.asset-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(229, 9, 20, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(229, 9, 20, 0.2);
+}
+
+.asset-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.asset-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.asset-card p {
+  color: #b3b3b3;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.asset-btn {
+  background: #e50914;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.asset-btn:hover {
+  background: #f40612;
+  transform: scale(1.05);
+}
+
+/* Contact Info */
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.contact-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 28px;
+}
+
+.contact-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #e50914;
+}
+
+.contact-card p {
+  color: #b3b3b3;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 8px;
+}
+
+.contact-card a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contact-card a:hover {
+  color: #e50914;
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 24px;
+  border-radius: 50px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+  background: #e50914;
+  border-color: #e50914;
+  transform: translateY(-2px);
+}
+
+.social-icon {
+  font-size: 1.25rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .page-header .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .media-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .press-item h3 {
+    font-size: 1.25rem;
+  }
+
+  .media-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info {
+    grid-template-columns: 1fr;
+  }
+
+  .page-container {
+    padding: 80px 4% 40px;
+  }
+}

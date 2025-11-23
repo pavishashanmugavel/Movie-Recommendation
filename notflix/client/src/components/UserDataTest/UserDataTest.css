@@ -1,0 +1,40 @@
+.user-data-test {
+  background: rgba(20, 20, 20, 0.95);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.user-data-test h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #e50914;
+}
+
+.user-data-test h4 {
+  margin: 0 0 10px 0;
+  color: #b3b3b3;
+  font-size: 1rem;
+}
+
+.user-info, .data-info, .history-preview {
+  margin-bottom: 15px;
+}
+
+.user-info p, .data-info p {
+  margin: 5px 0;
+  color: #ddd;
+}
+
+.history-preview ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.history-preview li {
+  margin: 3px 0;
+  color: #ddd;
+}

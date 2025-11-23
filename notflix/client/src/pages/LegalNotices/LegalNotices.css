@@ -1,0 +1,276 @@
+.legal-page,
+.terms-page,
+.privacy-page,
+.about-page {
+  min-height: 100vh;
+  background: #000;
+  color: #fff;
+  font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.page-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 100px 4% 60px;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 60px;
+  padding: 40px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.page-header h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+  color: #e50914;
+}
+
+.page-header .subtitle {
+  font-size: 1.25rem;
+  color: #b3b3b3;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.legal-section,
+.terms-section,
+.privacy-section,
+.about-section {
+  margin-bottom: 48px;
+  padding: 32px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.legal-section:last-child,
+.terms-section:last-child,
+.privacy-section:last-child,
+.about-section:last-child {
+  border-bottom: none;
+}
+
+.legal-section h2,
+.terms-section h2,
+.privacy-section h2,
+.about-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #e5e5e5;
+  letter-spacing: -0.02em;
+}
+
+.legal-section h3,
+.terms-section h3,
+.privacy-section h3,
+.about-section h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 24px 0 12px;
+  color: #e5e5e5;
+}
+
+.legal-section p,
+.terms-section p,
+.privacy-section p,
+.about-section p {
+  color: #b3b3b3;
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.legal-section ul,
+.terms-section ul,
+.privacy-section ul {
+  color: #b3b3b3;
+  font-size: 1rem;
+  line-height: 1.8;
+  margin: 16px 0 16px 24px;
+  list-style: disc;
+}
+
+.legal-section li,
+.terms-section li,
+.privacy-section li {
+  margin-bottom: 12px;
+}
+
+.legal-section a,
+.terms-section a,
+.privacy-section a,
+.about-section a {
+  color: #e50914;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.legal-section a:hover,
+.terms-section a:hover,
+.privacy-section a:hover,
+.about-section a:hover {
+  color: #f40612;
+  text-decoration: underline;
+}
+
+.contact-box {
+  background: rgba(229, 9, 20, 0.1);
+  border-left: 3px solid #e50914;
+  padding: 20px 24px;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+
+.contact-box p {
+  margin-bottom: 8px;
+}
+
+.contact-box strong {
+  color: #e50914;
+  font-weight: 700;
+}
+
+.last-updated {
+  color: #999;
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-top: 24px;
+}
+
+.highlight-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(229, 9, 20, 0.3);
+  border-radius: 8px;
+  padding: 24px;
+  margin: 24px 0;
+}
+
+.highlight-box p {
+  margin-bottom: 12px;
+}
+
+.highlight-box strong {
+  color: #e50914;
+}
+
+/* Stats Grid for About Page */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  margin: 40px 0;
+}
+
+.stat-card {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 32px 20px;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  background: rgba(229, 9, 20, 0.1);
+  border-color: rgba(229, 9, 20, 0.5);
+  transform: translateY(-4px);
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #e50914;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: #b3b3b3;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+/* Values Grid for About Page */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  margin: 32px 0;
+}
+
+.value-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 28px 24px;
+  transition: all 0.3s ease;
+}
+
+.value-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(229, 9, 20, 0.5);
+}
+
+.value-icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.value-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #e50914;
+}
+
+.value-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .page-header .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .legal-section h2,
+  .terms-section h2,
+  .privacy-section h2,
+  .about-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .legal-section h3,
+  .terms-section h3,
+  .privacy-section h3,
+  .about-section h3 {
+    font-size: 1.25rem;
+  }
+
+  .page-container {
+    padding: 80px 4% 40px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+  }
+}

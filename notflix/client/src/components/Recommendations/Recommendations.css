@@ -1,0 +1,127 @@
+.recommendations {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.recommendations h2 {
+  margin-bottom: 8px;
+}
+
+.rec-filters {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+.filter-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 220px;
+}
+
+.select-control {
+  background: #141414;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 10px;
+  border-radius: 4px;
+}
+
+.filter-type select {
+  background: #141414;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 10px;
+  border-radius: 4px;
+}
+
+.filter-query input {
+  background: #141414;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 10px;
+  border-radius: 4px;
+  min-width: 260px;
+}
+
+.suggestions {
+  margin-top: 8px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.chip.selected {
+  background: #e50914;
+  border-color: #e50914;
+}
+
+.filter-actions .btn {
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.filter-actions .apply {
+  background: #e50914;
+  color: #fff;
+}
+
+.filter-actions .clear {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  margin-left: 6px;
+}
+
+.rec-loading {
+  padding: 20px 10px;
+  opacity: 0.8;
+}
+
+/* Card list and card styles align with TitleCards */
+.card-list {
+  display: flex;
+  gap: 10px;
+  overflow-x: scroll;
+}
+
+.card-list::-webkit-scrollbar {
+  display: none;
+}
+
+.card-list .card {
+  position: relative;
+}
+
+.card-list img {
+  width: 240px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.card-list .card p {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #fff;
+}

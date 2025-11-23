@@ -1,0 +1,250 @@
+.hero{
+    position: relative;
+}
+
+.banner-img{
+    width: 100%;
+    mask-image: linear-gradient(to right, transparent, black 75%);
+    -weblit-mask-image: linear-gradient(to right, transparent, black 75%);
+}
+
+.hero-caption{
+    position: absolute;
+    width: 100%;
+    padding-left: 6%;
+    bottom: 0;
+}
+
+.caption-img{
+    width: 90%;
+    max-width: 420px;
+    margin-bottom: 30px;
+}
+
+.hero-caption p{
+    max-width: 700px;
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+.hero-btns{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+.hero-btns .btn img{
+    width: 25px;
+}
+
+.hero-btns .btn{
+    border: 0;
+    outline: 0;
+    padding: 8px 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.hero-btns .btn.dark-btn{
+    color: #fff;
+    background: #6d6d6eb3;
+}
+
+.hero-btns .btn:hover{
+    background: #ffffffbf;
+}
+
+.hero-btns .btn.dark-btn:hover{
+    background: #6d6d6e66;
+}
+
+.more-cards{
+    padding-left: 6%;
+}
+
+/* Details Modal Styles */
+.details-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.details-modal {
+    background: #141414;
+    border-radius: 8px;
+    max-width: 800px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    color: white;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #333;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 24px;
+    color: white;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.close-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.modal-content {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
+
+.modal-poster {
+    flex-shrink: 0;
+}
+
+.modal-poster img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.modal-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modal-meta {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.modal-meta span {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.rating {
+    background: #e50914 !important;
+}
+
+.overview {
+    line-height: 1.6;
+    color: #ccc;
+    margin: 0;
+}
+
+.modal-genres {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.genre-tag {
+    background: #333;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: #ccc;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.modal-actions .play-btn {
+    background: #e50914;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s;
+}
+
+.modal-actions .play-btn:hover {
+    background: #f40612;
+}
+
+.modal-actions .add-to-list-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid #666;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.modal-actions .add-to-list-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #999;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .modal-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .modal-poster img {
+        width: 150px;
+        height: 225px;
+        margin: 0 auto;
+    }
+    
+    .modal-actions {
+        justify-content: center;
+    }
+}
