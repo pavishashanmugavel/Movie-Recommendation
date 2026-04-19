@@ -1,4 +1,6 @@
 import dotenv from 'dotenv';
+dotenv.config();   // ✅ MUST be first
+
 import express from 'express';
 import cors from 'cors';
 import { MongoClient, ObjectId } from 'mongodb';
@@ -8,6 +10,10 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import fs from 'fs';
 import admin from 'firebase-admin';
+
+// Debug logs AFTER loading env
+console.log("MONGODB_URI:", process.env.MONGODB_URI);
+console.log("PORT:", process.env.PORT);
 
 // Resolve __dirname and load env from server/.env
 const __filename = fileURLToPath(import.meta.url);
@@ -37,7 +43,9 @@ async function init() {
   await usersCol.createIndex({ email: 1 }, { unique: true });
 
   const port = process.env.PORT || 5000;
-  app.listen(port, () => console.log('Auth server on port', port));
+  app.listen(port, "0.0.0.0", () => {
+  console.log(`✅ Auth server running on port ${port}`);
+});
 }
 init().catch(err => {
   console.error('Failed to init server:', err);

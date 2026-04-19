@@ -1,0 +1,14 @@
+services:
+  app:
+    build: .
+    ports:
+      - "6060:6060"
+    env_file:
+      - ./server/.env   
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
