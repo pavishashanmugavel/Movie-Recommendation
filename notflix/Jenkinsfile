@@ -24,7 +24,7 @@ pipeline {
         stage('Build') {
             steps {
                 dir('notflix') {
-                    sh 'docker compose build app'
+                    sh 'docker compose build app prometheus'
                 }
             }
         }
