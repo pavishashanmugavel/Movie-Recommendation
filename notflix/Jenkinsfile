@@ -14,8 +14,9 @@ pipeline {
         stage('Prepare') {
             steps {
                 dir('notflix') {
-                    sh 'mkdir -p server'
+                    sh 'mkdir -p server client'
                     sh 'cp /var/jenkins_secrets/.env server/.env || true'
+                    sh 'cp /var/jenkins_secrets/client.env client/.env.local || true'
                 }
             }
         }
