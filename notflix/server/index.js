@@ -20,9 +20,20 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 dotenv.config({ path: path.resolve(__dirname, '.env') });
 
+import promClient from 'prom-client';
+
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+// Initialize Prometheus metrics collection
+const collectDefaultMetrics = promClient.collectDefaultMetrics;
+collectDefaultMetrics({ register: promClient.register });
+
+app.get('/metrics', async (req, res) => {
+  res.set('Content-Type', promClient.register.contentType);
+  res.end(await promClient.register.metrics());
+});
 
 const uri = process.env.MONGODB_URI;
 const dbName = process.env.DB_NAME || 'Netflix users';

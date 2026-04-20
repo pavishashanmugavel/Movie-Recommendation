@@ -5,8 +5,8 @@ pipeline {
         stage('Clean') {
             steps {
                 dir('notflix') {
-                    sh 'docker compose stop app mongo'
-                    sh 'docker compose rm -f app mongo'
+                    sh 'docker compose stop app mongo prometheus'
+                    sh 'docker compose rm -f app mongo prometheus'
                 }
             }
         }
@@ -32,7 +32,7 @@ pipeline {
         stage('Run') {
             steps {
                 dir('notflix') {
-                    sh 'docker compose up -d app mongo'
+                    sh 'docker compose up -d app mongo prometheus'
                 }
             }
         }

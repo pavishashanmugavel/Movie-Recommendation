@@ -13,6 +13,13 @@ services:
     ports:
       - "27017:27017"
 
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+
   jenkins:
     build:
       context: .
