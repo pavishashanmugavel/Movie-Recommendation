@@ -2,15 +2,28 @@ pipeline {
     agent any
 
     stages {
+        stage('Clean') {
+            steps {
+                dir('notflix') {
+                    sh 'docker compose stop app mongo'
+                    sh 'docker compose rm -f app mongo'
+                }
+            }
+        }
+
         stage('Build') {
             steps {
-                sh 'docker compose build'
+                dir('notflix') {
+                    sh 'docker compose build app'
+                }
             }
         }
 
         stage('Run') {
             steps {
-                sh 'docker compose up -d'
+                dir('notflix') {
+                    sh 'docker compose up -d app mongo'
+                }
             }
         }
     }
